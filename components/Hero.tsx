@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
         
         <Reveal delay={0.35}>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-4 shadow-accent/20 drop-shadow-lg">
-            Jessy.
+            Jessica 
           </h1>
         </Reveal>
         
@@ -45,8 +45,9 @@ export const Hero: React.FC = () => {
         </Reveal>
 
         <Reveal delay={0.65}>
-          <CyberButton href="#projects">
-             Initialize_Project_View
+          <CyberButton href="/images/resume/Jessica-Adiele-CV.pdf"
+           download="Jessica-Adiele-Resume.pdf">
+             Download Resume
           </CyberButton>
         </Reveal>
       </div>

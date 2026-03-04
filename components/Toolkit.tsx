@@ -18,7 +18,7 @@ const tools: Tool[] = [
   { name: 'TypeScript', category: 'Language', icon: Terminal },
   { name: 'Tailwind', category: 'Styling', icon: Wind },
   { name: 'FastAPI', category: 'Framework', icon: Cpu },
-  { name: 'Vite', category: 'Build Tool', icon: Box },
+  { name: 'Wordpress', category: 'Build Tool', icon: Box },
   { name: 'Git & GitHub', category: 'Version Control', icon: GitBranch },
 ];
 

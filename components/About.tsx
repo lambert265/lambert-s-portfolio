@@ -15,7 +15,9 @@ export const About: React.FC = () => {
         <div className="space-y-6 text-secondary text-lg leading-relaxed">
           <Reveal>
             <p>
-              Hello! My name is Jessy and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS taught me a lot about how the web works.
+              Hello! My name is Jessica and I build things on the web and I explain how they work.
+              As both a web developer and technical writer, I’m comfortable moving between codebases and documentation. I enjoy translating complex technical concepts into structured, human-readable content while also developing clean, responsive web experiences.
+              I’ve worked with startups where clarity and speed matter. That experience shaped how I approach both development and writing: deliberate architecture, thoughtful UX, and documentation that doesn’t waste the reader’s time.
             </p>
           </Reveal>
           <Reveal>
@@ -40,8 +42,8 @@ export const About: React.FC = () => {
                 ></div>
                 <div className="relative bg-surfaceHighlight rounded overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
                   <img 
-                    src="https://picsum.photos/400/500?grayscale" 
-                    alt="Jessy, Developer Portrait" 
+                    src="/images/aboutme.jpeg" 
+                    alt="Jessica, Developer Portrait" 
                     className="w-full h-auto object-cover"
                     referrerPolicy="no-referrer"
                   />

@@ -4,12 +4,14 @@ interface CyberButtonProps {
   href: string;
   children: React.ReactNode;
   className?: string;
+  download?: boolean;
 }
 
-export const CyberButton: React.FC<CyberButtonProps> = ({ href, children, className = '' }) => {
+export const CyberButton: React.FC<CyberButtonProps> = ({ href, children, className = '',download }) => {
   return (
     <a
       href={href}
+      download={download}
       className={`group relative inline-flex items-center justify-center px-8 py-4 font-mono font-bold text-white transition-all duration-200 focus:outline-none ${className}`}
     >
       {/* Background Shapes */}
