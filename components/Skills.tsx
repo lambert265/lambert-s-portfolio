@@ -7,39 +7,40 @@ import { SkillCategory } from '../types';
 
 const skillCategories: SkillCategory[] = [
   {
-    title: 'SEO Writing',
-    description: 'Optimizing content visibility and driving organic traffic through strategic keyword implementation.',
+    title: 'Web3 & Frontend Development',
+    description: 'Building modern, high-performance, and accessible digital experiences, from responsive interfaces to decentralized applications.',
+    icon: Code2,
+    skills: [
+      'React, Next.js & TypeScript Development',
+      'Web3 Integration & Smart Contract Interaction (Ethereum, Solidity)',
+      'Responsive UI/UX Design & Implementation',
+      'Performance Optimization & Code Efficiency',
+      'Accessibility Compliance (WCAG Standards)',
+      'Modern CSS & Animations (Tailwind CSS, Framer Motion)'
+    ]
+  },
+  {
+    title: 'Technical Writing & Developer Content',
+    description: 'Translating complex Web3 and engineering concepts into clear, engaging, and educational content.',
+    icon: PenTool,
+    skills: [
+      'Deep-Dive Technical Tutorials & How-To Guides',
+      'API Documentation & Developer Guides',
+      'Case Studies, White Papers & Research Summaries',
+      'Developer Advocacy Content & Community Education',
+      'Editing, Proofreading & Structured Documentation'
+    ]
+  },
+  {
+    title: 'SEO & Content Strategy',
+    description: 'Enhancing content visibility and organic reach for technical blogs, developer resources, and web products.',
     icon: Search,
     skills: [
       'Keyword Research & Strategy',
-      'On-Page & Off-Page SEO',
-      'Content Audit & Optimization',
-      'Google Analytics & Search Console',
-      'Competitor Analysis'
-    ]
-  },
-  {
-    title: 'Technical Blogs',
-    description: 'Translating complex engineering concepts into clear, engaging, and educational content.',
-    icon: PenTool,
-    skills: [
-      'Deep-Dive Technical Tutorials',
-      'API Documentation & Guides',
-      'Case Studies & White Papers',
-      'Developer Advocacy Content',
-      'Editing & Proofreading'
-    ]
-  },
-  {
-    title: 'Web Development',
-    description: 'Building modern, performant, and accessible digital experiences.',
-    icon: Code2,
-    skills: [
-      'React, Next.js & TypeScript',
-      'Responsive UI/UX Implementation',
-      'Performance Optimization',
-      'Accessibility (WCAG) Compliance',
-      'Modern CSS (Tailwind, Framer Motion)'
+      'On-Page & Off-Page SEO Optimization',
+      'Content Audit & Performance Analysis',
+      'Google Analytics & Search Console Insights',
+      'Competitor Analysis & Benchmarking'
     ]
   }
 ];

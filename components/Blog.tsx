@@ -3,9 +3,7 @@ import { SectionHeading } from './ui/SectionHeading';
 import { Reveal } from './ui/Reveal';
 import { Calendar, Clock, ArrowRight, Hash } from 'lucide-react';
 import { BlogPost } from '../types';
-// import blog1 from '../assets/image/blog1.webp';
-// import blog2 from '../assets/image/blog2.webp';
-// import blog3 from '../assets/image/blog3.webp';
+import { Link } from 'react-router-dom';
 
 const blogPosts: BlogPost[] = [
   {
@@ -14,8 +12,8 @@ const blogPosts: BlogPost[] = [
     excerpt: 'Developers can now use tools like GitHub Copilot, ChatGPT, and Amazon CodeWhisperer to write functional software at an incredibly fast pace.',
     date: '2025-06-30',
     readTime: '3 min read',
-    image: '/images/blog1.webp', // Replace with your actual image path
-    link: 'https://medium.com/@jessicaadiele575/will-ai-replace-programmers-60928eb4c1af', // Replace with your actual article URL
+    image: '/images/blog1.webp',
+    link: '/blog/will-ai-replace-programmers',
     tags: ['Ai']
   },
   {
@@ -25,18 +23,28 @@ const blogPosts: BlogPost[] = [
     date: '2025-05-05',
     readTime: '8 min read',
     image: '/images/blog2.webp',
-    link: 'https://medium.com/@jessicaadiele575/7-vs-code-hacks-every-developer-should-know-724327fbff12', // Replace with your actual article URL
+    link: '/blog/vscode-hacks',
     tags: ['VS Code', 'Productivity']
   },
   {
     id: '3',
-    title: 'ChatGPT Isn’t Just Smart — It’s a Cheat Code ',
-    excerpt: 'Let’s be real — most people are using ChatGPT like a fancier Google search bar. Ask a question, get an answer, copy-paste, and move on.',
+    title: 'ChatGPT Isn\'t Just Smart — It\'s a Cheat Code ',
+    excerpt: 'Let\'s be real — most people are using ChatGPT like a fancier Google search bar. Ask a question, get an answer, copy-paste, and move on.',
     date: '2025-05-19',
     readTime: '6 min read',
     image: '/images/blog3.webp',
-    link: 'https://medium.com/@jessicaadiele575/chatgpt-isnt-just-smart-it-s-a-cheat-code-if-you-know-how-to-use-it-c3007f4cce09', // Replace with your actual article URL
+    link: '/blog/chatgpt-cheat-code',
     tags: ['ChatGPT', 'AI']
+  },
+  {
+    id: '4',
+    title: 'Web3 for Developers: Beyond the Hype',
+    excerpt: 'Web3 isn\'t just about crypto and NFTs. It\'s a fundamental shift in how we build applications—decentralized, user-owned, and trustless.',
+    date: '2025-07-15',
+    readTime: '10 min read',
+    image: '/images/blog4.webp',
+    link: '/blog/web3-for-developers',
+    tags: ['Web3', 'Blockchain']
   }
 ];
 
@@ -48,10 +56,8 @@ export const Blog: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogPosts.map((post, index) => (
           <Reveal key={post.id} delay={index * 0.1} width="100%">
-            <a
-              href={post.link}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={post.link}
               className="group block bg-surface border border-border rounded overflow-hidden hover:border-accent/50 transition-all duration-300 flex flex-col h-full relative"
             >
               {/* Image Container */}
@@ -97,21 +103,16 @@ export const Blog: React.FC = () => {
                     {post.readTime}
                   </span>
                   
-                  <a 
-                    href={post.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-bold text-white group-hover:text-accent transition-colors"
-                  >
+                  <span className="flex items-center gap-2 text-sm font-bold text-white group-hover:text-accent transition-colors">
                     Read Article
                     <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </span>
                 </div>
               </div>
 
               {/* Hover Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            </a>
+            </Link>
           </Reveal>
         ))}
       </div>

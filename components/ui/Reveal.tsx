@@ -47,7 +47,7 @@ export const Reveal: React.FC<RevealProps> = ({ children, width = 'fit-content',
           bottom: 4,
           left: 0,
           right: 0,
-          background: "#3b82f6", // Accent color
+          background: "#39ff14", // Accent color - Neon Green
           zIndex: 20,
         }}
       />

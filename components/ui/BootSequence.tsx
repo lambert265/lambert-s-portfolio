@@ -108,7 +108,7 @@ export const BootSequence: React.FC<BootSequenceProps> = ({ onComplete }) => {
 
             {/* Orbiting Particles */}
             <div className="absolute inset-0 animate-[spin_3s_linear_infinite]">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-accent rounded-full shadow-[0_0_10px_#00f3ff]"></div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-accent rounded-full shadow-[0_0_10px_#39ff14]"></div>
             </div>
         </div>
 
@@ -197,7 +197,7 @@ export const BootSequence: React.FC<BootSequenceProps> = ({ onComplete }) => {
 
         {/* Background Grid (Desktop Only) */}
         <div className="absolute inset-0 pointer-events-none opacity-20 z-[-1]">
-             <div className="absolute bottom-0 left-0 right-0 h-full bg-[linear-gradient(rgba(0,243,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,243,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
+             <div className="absolute bottom-0 left-0 right-0 h-full bg-[linear-gradient(rgba(57,255,20,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(57,255,20,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
         </div>
       </div>
     </motion.div>

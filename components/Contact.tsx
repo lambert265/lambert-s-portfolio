@@ -85,12 +85,11 @@ export const Contact: React.FC = () => {
       // Construct mailto link
       const subject = encodeURIComponent(`Portfolio Inquiry: ${formData.name}`);
       const body = encodeURIComponent(
-        `Hi Jessy,\n\nI'm contacting you from your portfolio.\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        `Hi Lambert,\n\nI'm contacting you from your portfolio.\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
       );
       
       // Open email client
-      // Replace with your actual email address
-      window.location.href = `mailto:jessicaadiele575@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:igweajurijosph@gmail.com?subject=${subject}&body=${body}`;
       
       
       // Reset form
@@ -220,27 +219,27 @@ export const Contact: React.FC = () => {
       </Reveal>
 
       <div className="flex justify-center gap-8 text-secondary">
-        <a href="https://github.com/jessydunlimiteddev" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="GitHub Profile">
-          {/* Replace with your GitHub URL */}
+        <a href="https://github.com/Lambert265" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="GitHub Profile">
           <Github size={24} />
         </a>
-        <a href="https://www.linkedin.com/in/jessica-c-adiele-gmcpn-278136264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="LinkedIn Profile">
-          {/* Replace with your LinkedIn URL */}
+        <a href="https://www.linkedin.com/in/lambert456/" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="LinkedIn Profile">
           <Linkedin size={24} />
         </a>
-        
-        {/* <a href="https://indeed.com/" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="Indeed Profile">
-          Replace with your Indeed Profile URL
-          <Briefcase size={24} />
-        </a> */}
-        <a href="mailto:jessicaadiele575@gmail.com" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="Send Email">
-           {/* Replace with your Email Address */}
+        <a href="https://www.instagram.com/_yk_lambert" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="Instagram Profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://www.tiktok.com/@yk_lambert" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="TikTok Profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+        </a>
+        <a href="mailto:igweajurijosph@gmail.com" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="Send Email">
            <Mail size={24} />
         </a>
       </div>
       
-      <footer className="mt-24 text-center text-sm font-mono text-secondary/60">
-        <p>Designed & Built by Jessy</p>
+      <footer className="mt-24 text-center text-sm font-mono text-secondary/60 max-w-2xl">
+        <p className="mb-2">Web3, frontend, and technical writing all in one place.</p>
+        <p className="mb-2">Designed with clarity, performance, and precision in mind. Let's build the next big thing.</p>
+        <p className="text-xs mt-4">© 2026 Lambert. All rights reserved.</p>
       </footer>
     </section>
   );

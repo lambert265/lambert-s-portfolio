@@ -13,13 +13,12 @@ import {
 import { Tool } from '../types';
 
 const tools: Tool[] = [
-  // { name: 'Next.js', category: 'Framework', icon: Globe },
-  { name: 'React', category: 'Library', icon: Code2 },
-  { name: 'TypeScript', category: 'Language', icon: Terminal },
-  { name: 'Tailwind', category: 'Styling', icon: Wind },
-  { name: 'FastAPI', category: 'Framework', icon: Cpu },
-  { name: 'Wordpress', category: 'Build Tool', icon: Box },
-  { name: 'Git & GitHub', category: 'Version Control', icon: GitBranch },
+  { name: 'React', category: 'Frontend Library for building dynamic, responsive interfaces', icon: Code2 },
+  { name: 'TypeScript', category: 'Strongly-typed language for scalable, maintainable code', icon: Terminal },
+  { name: 'Tailwind CSS', category: 'Utility-first styling for modern, responsive designs', icon: Wind },
+  { name: 'FastAPI', category: 'Python framework for building performant APIs', icon: Cpu },
+  { name: 'Next.js', category: 'Modern framework for React-based web applications', icon: Globe },
+  { name: 'Git & GitHub', category: 'Version control and collaborative development', icon: GitBranch },
 ];
 
 const container = {

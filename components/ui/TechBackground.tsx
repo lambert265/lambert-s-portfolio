@@ -48,7 +48,7 @@ export const TechBackground: React.FC = () => {
       y: (Math.random() - 0.5) * 2000 - 500, // Bias upwards slightly
       z: Math.random() * 3000,
       size: Math.random() * 2,
-      color: Math.random() > 0.5 ? '#00f3ff' : '#bc13fe'
+      color: Math.random() > 0.5 ? '#39ff14' : '#bc13fe'
     }));
 
     const draw = () => {
@@ -95,8 +95,8 @@ export const TechBackground: React.FC = () => {
             const alpha = Math.min(0.6, (floorY - horizonY) / (height/2));
             
             ctx.shadowBlur = 5;
-            ctx.shadowColor = '#00f3ff';
-            ctx.strokeStyle = `rgba(0, 243, 255, ${alpha})`;
+            ctx.shadowColor = '#39ff14';
+            ctx.strokeStyle = `rgba(57, 255, 20, ${alpha})`;
             
             ctx.beginPath();
             ctx.moveTo(0, floorY);
@@ -109,7 +109,7 @@ export const TechBackground: React.FC = () => {
       // --- 2. Horizon Glow ---
       const gradient = ctx.createLinearGradient(0, horizonY - 50, 0, horizonY + 50);
       gradient.addColorStop(0, 'rgba(188, 19, 254, 0)');
-      gradient.addColorStop(0.5, 'rgba(0, 243, 255, 0.3)');
+      gradient.addColorStop(0.5, 'rgba(57, 255, 20, 0.3)');
       gradient.addColorStop(1, 'rgba(188, 19, 254, 0)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, horizonY - 50, width, 100);
@@ -181,8 +181,8 @@ export const TechBackground: React.FC = () => {
           animation: rotate-hud 15s linear infinite;
         }
         @keyframes pulse-glow {
-          0%, 100% { box-shadow: 0 0 5px #00f3ff, inset 0 0 5px #00f3ff; }
-          50% { box-shadow: 0 0 20px #00f3ff, inset 0 0 10px #00f3ff; }
+          0%, 100% { box-shadow: 0 0 5px #39ff14, inset 0 0 5px #39ff14; }
+          50% { box-shadow: 0 0 20px #39ff14, inset 0 0 10px #39ff14; }
         }
         .animate-pulse-glow {
           animation: pulse-glow 3s infinite;
@@ -193,7 +193,7 @@ export const TechBackground: React.FC = () => {
       
       {/* Grid Texture Overlay */}
       <div className="absolute inset-0 opacity-[0.05]" 
-           style={{ backgroundImage: 'linear-gradient(rgba(0, 243, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 243, 255, 0.3) 1px, transparent 1px)', backgroundSize: '30px 30px' }}>
+           style={{ backgroundImage: 'linear-gradient(rgba(57, 255, 20, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(57, 255, 20, 0.3) 1px, transparent 1px)', backgroundSize: '30px 30px' }}>
       </div>
 
       {/* Top Bar */}
@@ -204,7 +204,7 @@ export const TechBackground: React.FC = () => {
                 <span className="hidden md:inline">SYS.NEON.v9</span>
                 <span>ID: 8492-NEON</span>
              </div>
-             <div className="h-[2px] w-48 bg-gradient-to-r from-accent to-transparent mt-1 shadow-[0_0_10px_#00f3ff]"></div>
+             <div className="h-[2px] w-48 bg-gradient-to-r from-accent to-transparent mt-1 shadow-[0_0_10px_#39ff14]"></div>
          </div>
       </div>
 

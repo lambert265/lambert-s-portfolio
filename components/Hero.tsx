@@ -19,17 +19,17 @@ export const Hero: React.FC = () => {
         
         <Reveal delay={0.35}>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-4 shadow-accent/20 drop-shadow-lg">
-            Jessica 
+           Dorborobari Samuel Lambert
           </h1>
         </Reveal>
         
         <Reveal delay={0.45}>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-secondary mb-12 h-[1.3em]">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-secondary mb-12 min-h-[2.6em] md:min-h-[1.8em] lg:min-h-[1.3em]">
             <Typewriter 
               strings={[
-                "I'm a Technical Writer.", 
-                "I'm a Web Developer.", 
-                "I build accessible solutions."
+                "I'm a Web3 & Frontend Developer.", 
+                "I turn complex systems into elegant, user-friendly experiences.", 
+                "I write clear technical content that empowers others."
               ]}
               typeSpeed={70}
               deleteSpeed={50}
@@ -45,8 +45,8 @@ export const Hero: React.FC = () => {
         </Reveal>
 
         <Reveal delay={0.65}>
-          <CyberButton href="/images/resume/Jessica-Adiele-CV.pdf"
-           download="Jessica-Adiele-Resume.pdf">
+          <CyberButton href="/images/resume/Resume.docx"
+           download={true}>
              Download Resume
           </CyberButton>
         </Reveal>
@@ -58,4 +58,3 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
-

@@ -10,7 +10,7 @@ const testimonials: Testimonial[] = [
     name: 'Sarah Chen',
     role: 'Product Manager',
     company: 'TechFlow Systems',
-    content: "Jessy's ability to translate complex requirements into intuitive user interfaces is unmatched. The dashboard redesign resulted in a 40% increase in user engagement within the first month.",
+    content: "Lambert's ability to translate complex requirements into intuitive user interfaces is unmatched. The dashboard redesign resulted in a 40% increase in user engagement within the first month.",
     image: 'https://picsum.photos/100/100?random=10'
   },
   {
@@ -18,7 +18,7 @@ const testimonials: Testimonial[] = [
     name: 'Marcus Rodriguez',
     role: 'CTO',
     company: 'NovaStart',
-    content: "One of the most technically proficient developers I've worked with. Not only is the code clean and scalable, but Jessy also brings a designer's eye to every feature implementation.",
+    content: "One of the most technically proficient developers I've worked with. Not only is the code clean and scalable, but Lambert also brings a designer's eye to every feature implementation.",
     image: 'https://picsum.photos/100/100?random=11'
   },
   {
@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
     name: 'Emily Weiss',
     role: 'Senior Designer',
     company: 'Creative Studio X',
-    content: "It's rare to find a developer who cares as much about the micro-interactions as the design team does. Jessy bridges the gap between design and engineering perfectly.",
+    content: "It's rare to find a developer who cares as much about the micro-interactions as the design team does. Lambert bridges the gap between design and engineering perfectly.",
     image: 'https://picsum.photos/100/100?random=12'
   }
 ];
