@@ -53,8 +53,8 @@ export const Blog: React.FC = () => {
     <section id="blog" className="py-24 px-6 max-w-7xl mx-auto">
       <SectionHeading number="06" title="Latest Articles" />
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogPosts.map((post, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {blogPosts.slice(0, 3).map((post, index) => (
           <Reveal key={post.id} delay={index * 0.1} width="100%">
             <Link
               to={post.link}
@@ -62,11 +62,11 @@ export const Blog: React.FC = () => {
             >
               {/* Image Container */}
               <div className="relative h-48 overflow-hidden">
-                <div className="absolute inset-0 bg-accent/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
+                <div className="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
                 <img 
                   src={post.image} 
                   alt={post.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out grayscale group-hover:grayscale-0"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 
                 {/* Date Badge */}
@@ -116,6 +116,19 @@ export const Blog: React.FC = () => {
           </Reveal>
         ))}
       </div>
+
+      {/* View All Button */}
+      <Reveal width="100%">
+        <div className="text-center">
+          <Link 
+            to="/blog"
+            className="inline-flex items-center gap-2 px-8 py-3 border border-accent text-accent font-mono hover:bg-accent/10 transition-colors rounded group"
+          >
+            View All Articles
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </Reveal>
     </section>
   );
 };

@@ -105,22 +105,79 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 max-w-7xl mx-auto flex flex-col items-center">
-      <div className="max-w-2xl text-center mb-12">
-        <p className="font-mono text-accent mb-4">06. What's Next?</p>
-        <Reveal width="100%">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
-        </Reveal>
-        
-        <Reveal width="100%">
-          <p className="text-secondary text-lg leading-relaxed">
-            I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-          </p>
-        </Reveal>
-      </div>
+    <section id="contact" className="py-24 px-6 max-w-7xl mx-auto">
+      <div className="grid lg:grid-cols-2 gap-16 items-start">
+        {/* Left Side - Info */}
+        <div>
+          <p className="font-mono text-accent mb-4">06. What's Next?</p>
+          <Reveal width="100%">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Build Something</h2>
+          </Reveal>
+          
+          <Reveal width="100%">
+            <p className="text-secondary text-lg leading-relaxed mb-8">
+              Got a project in mind? Looking for a developer who actually cares about the details? 
+              Let's talk. I'm always open to discussing new opportunities, creative ideas, or just 
+              connecting with fellow builders.
+            </p>
+          </Reveal>
 
-      <Reveal width="100%">
-        <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto space-y-6 mb-16 text-left" noValidate>
+          <Reveal width="100%">
+            <div className="space-y-6 mb-12">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                  <Mail className="text-accent" size={20} />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-1">Email Me</h3>
+                  <a href="mailto:igweajurijosph@gmail.com" className="text-secondary hover:text-accent transition-colors">
+                    igweajurijosph@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                  <Briefcase className="text-accent" size={20} />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-1">Open to Work</h3>
+                  <p className="text-secondary">Available for freelance & full-time opportunities</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal width="100%">
+            <div className="flex gap-4">
+              <a href="https://github.com/Lambert265" target="_blank" rel="noopener noreferrer" 
+                className="w-12 h-12 rounded-lg bg-surfaceHighlight border border-border flex items-center justify-center hover:border-accent hover:bg-accent/10 transition-all hover:-translate-y-1" 
+                aria-label="GitHub Profile">
+                <Github size={20} className="text-secondary hover:text-accent" />
+              </a>
+              <a href="https://www.linkedin.com/in/lambert456/" target="_blank" rel="noopener noreferrer" 
+                className="w-12 h-12 rounded-lg bg-surfaceHighlight border border-border flex items-center justify-center hover:border-accent hover:bg-accent/10 transition-all hover:-translate-y-1" 
+                aria-label="LinkedIn Profile">
+                <Linkedin size={20} className="text-secondary hover:text-accent" />
+              </a>
+              <a href="https://www.instagram.com/_yk_lambert" target="_blank" rel="noopener noreferrer" 
+                className="w-12 h-12 rounded-lg bg-surfaceHighlight border border-border flex items-center justify-center hover:border-accent hover:bg-accent/10 transition-all hover:-translate-y-1" 
+                aria-label="Instagram Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-secondary hover:text-accent"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="https://www.tiktok.com/@yk_lambert" target="_blank" rel="noopener noreferrer" 
+                className="w-12 h-12 rounded-lg bg-surfaceHighlight border border-border flex items-center justify-center hover:border-accent hover:bg-accent/10 transition-all hover:-translate-y-1" 
+                aria-label="TikTok Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-secondary hover:text-accent"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+              </a>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Right Side - Form */}
+        <Reveal width="100%">
+          <div className="bg-surfaceHighlight border border-border rounded-2xl p-8">
+            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
           {/* Name Field */}
           <div>
             <label htmlFor="name" className="block text-sm font-mono text-secondary mb-2">Name</label>
@@ -215,28 +272,12 @@ export const Contact: React.FC = () => {
             Send Message
             <Send size={16} className="group-hover:translate-x-1 transition-transform" />
           </button>
-        </form>
-      </Reveal>
-
-      <div className="flex justify-center gap-8 text-secondary">
-        <a href="https://github.com/Lambert265" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="GitHub Profile">
-          <Github size={24} />
-        </a>
-        <a href="https://www.linkedin.com/in/lambert456/" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="LinkedIn Profile">
-          <Linkedin size={24} />
-        </a>
-        <a href="https://www.instagram.com/_yk_lambert" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="Instagram Profile">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        </a>
-        <a href="https://www.tiktok.com/@yk_lambert" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="TikTok Profile">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
-        </a>
-        <a href="mailto:igweajurijosph@gmail.com" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="Send Email">
-           <Mail size={24} />
-        </a>
+            </form>
+          </div>
+        </Reveal>
       </div>
       
-      <footer className="mt-24 text-center text-sm font-mono text-secondary/60 max-w-2xl">
+      <footer className="mt-24 text-center text-sm font-mono text-secondary/60 max-w-2xl mx-auto">
         <p className="mb-2">Web3, frontend, and technical writing all in one place.</p>
         <p className="mb-2">Designed with clarity, performance, and precision in mind. Let's build the next big thing.</p>
         <p className="text-xs mt-4">© 2026 Lambert. All rights reserved.</p>

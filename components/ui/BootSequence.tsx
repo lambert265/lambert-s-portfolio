@@ -9,23 +9,14 @@ export const BootSequence: React.FC<BootSequenceProps> = ({ onComplete }) => {
   const [desktopStep, setDesktopStep] = useState(0);
 
   useEffect(() => {
-    // Desktop sequence timing
-    if (window.innerWidth >= 768) {
-      const timers = [
-        setTimeout(() => setDesktopStep(1), 500),
-        setTimeout(() => setDesktopStep(2), 1200),
-        setTimeout(() => setDesktopStep(3), 2000),
-        setTimeout(() => setDesktopStep(4), 2800),
-        setTimeout(() => onComplete(), 3500),
-      ];
-      return () => timers.forEach(clearTimeout);
-    } else {
-      // Mobile sequence timing (faster)
-      const timer = setTimeout(() => {
-        onComplete();
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
+    const timers = [
+      setTimeout(() => setDesktopStep(1), 500),
+      setTimeout(() => setDesktopStep(2), 1200),
+      setTimeout(() => setDesktopStep(3), 2000),
+      setTimeout(() => setDesktopStep(4), 2800),
+      setTimeout(() => onComplete(), 3500),
+    ];
+    return () => timers.forEach(clearTimeout);
   }, [onComplete]);
 
   return (
@@ -36,52 +27,11 @@ export const BootSequence: React.FC<BootSequenceProps> = ({ onComplete }) => {
         transition: { duration: 0.8, ease: "easeInOut" } 
       }}
     >
-      {/* ================= MOBILE VERSION (Minimal) ================= */}
-      <div className="flex md:hidden flex-col items-center gap-6">
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative"
-        >
-          <div className="text-4xl font-bold tracking-tighter text-white flex items-center gap-2">
-            <span className="text-accent">&gt;_</span> 
-            <span>portfolio</span>
-            <motion.span 
-              animate={{ opacity: [1, 0, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-              className="text-accent text-lg align-top"
-            >
-              ▮
-            </motion.span>
-          </div>
-          <div className="absolute inset-0 bg-accent/20 blur-2xl -z-10 rounded-full opacity-50"></div>
-        </motion.div>
-
-        <div className="w-48 h-[2px] bg-white/10 rounded-full overflow-hidden mt-4">
-          <motion.div 
-            className="h-full bg-accent"
-            initial={{ width: "0%" }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 1.8, ease: "easeInOut" }}
-          />
-        </div>
-        
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
-          transition={{ delay: 0.5 }}
-          className="text-white/40 font-mono text-xs tracking-[0.2em]"
-        >
-          INITIALIZING...
-        </motion.p>
-      </div>
-
-      {/* ================= DESKTOP VERSION (Advanced) ================= */}
-      <div className="hidden md:flex flex-col items-center justify-center w-full max-w-4xl relative">
+      {/* ================= FULL BOOT SEQUENCE (ALL DEVICES) ================= */}
+      <div className="flex flex-col items-center justify-center w-full max-w-4xl relative px-4">
         
         {/* Central Core Animation */}
-        <div className="relative w-64 h-64 mb-12 flex items-center justify-center">
+        <div className="relative w-48 h-48 md:w-64 md:h-64 mb-8 md:mb-12 flex items-center justify-center">
             {/* Outer Ring */}
             <motion.div 
                 className="absolute inset-0 border border-accent/20 rounded-full"
@@ -96,12 +46,12 @@ export const BootSequence: React.FC<BootSequenceProps> = ({ onComplete }) => {
             
             {/* Inner Core */}
             <motion.div 
-                className="w-32 h-32 bg-accent/5 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent/30 box-glow"
+                className="w-24 h-24 md:w-32 md:h-32 bg-accent/5 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent/30 box-glow"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.8, ease: "backOut" }}
             >
-                <div className="text-4xl font-bold text-white tracking-tighter flex">
+                <div className="text-2xl md:text-4xl font-bold text-white tracking-tighter flex">
                     <span className="text-accent">&gt;</span>_
                 </div>
             </motion.div>
@@ -113,7 +63,7 @@ export const BootSequence: React.FC<BootSequenceProps> = ({ onComplete }) => {
         </div>
 
         {/* System Status Text */}
-        <div className="font-mono text-sm h-32 w-full max-w-md">
+        <div className="font-mono text-xs md:text-sm h-32 w-full max-w-md">
             <AnimatePresence mode="wait">
                 {desktopStep >= 0 && (
                     <motion.div 

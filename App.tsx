@@ -15,6 +15,7 @@ import { MobileNav } from './components/MobileNav';
 import { TechBackground } from './components/ui/TechBackground';
 import { BootSequence } from './components/ui/BootSequence';
 import { BlogArticle } from './pages/BlogArticle';
+import { BlogPage } from './pages/BlogPage';
 import { blogArticles } from './data/blogData';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -60,6 +61,7 @@ const App: React.FC = () => {
           
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/blog" element={<BlogPage />} />
             <Route 
               path="/blog/will-ai-replace-programmers" 
               element={<BlogArticle {...blogArticles['will-ai-replace-programmers']} />} 

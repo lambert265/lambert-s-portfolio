@@ -57,7 +57,7 @@ export const About: React.FC = () => {
                   className="absolute inset-0 border-2 border-accent translate-x-4 translate-y-4 rounded transition-transform group-hover:translate-x-2 group-hover:translate-y-2"
                   aria-hidden="true"
                 ></div>
-                <div className="relative bg-surfaceHighlight rounded overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                <div className="relative bg-surfaceHighlight rounded overflow-hidden transition-all duration-500">
                   <img 
                     src="/images/aboutme.jpg" 
                     alt="Lambert, Developer Portrait" 
@@ -65,7 +65,7 @@ export const About: React.FC = () => {
                     referrerPolicy="no-referrer"
                   />
                   <div 
-                    className="absolute inset-0 bg-accent/20 hover:bg-transparent transition-colors"
+                    className="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-colors"
                     aria-hidden="true"
                   ></div>
                 </div>

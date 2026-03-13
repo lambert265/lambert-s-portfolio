@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 export const FloatingSocials: React.FC = () => {
   return (
-    <div className="fixed bottom-0 left-12 hidden lg:flex flex-col items-center gap-6 text-secondary z-40">
+    <div className="fixed bottom-0 left-6 hidden lg:flex flex-col items-center gap-4 text-secondary z-40 opacity-60 hover:opacity-100 transition-opacity duration-300">
       <a href="https://github.com/Lambert265" target="_blank" rel="noopener noreferrer" className="hover:text-accent hover:-translate-y-1 transition-all duration-300" aria-label="GitHub Profile" title="GitHub Profile">
         <Github size={20} />
       </a>

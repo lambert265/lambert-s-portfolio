@@ -84,13 +84,13 @@ export const Projects: React.FC = () => {
                 aria-label={`View details for ${project.title}`}
               >
                  {/* Overlay */}
-                 <div className="absolute inset-0 bg-accent/20 group-hover:bg-transparent transition-all duration-500 z-10"></div>
+                 <div className="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-all duration-500 z-10"></div>
                  
                  {/* Image with Zoom Effect */}
                  <img 
                    src={project.image} 
-                   alt="" 
-                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out shadow-lg"
+                   alt={project.title} 
+                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ease-out shadow-lg"
                  />
 
                  {/* Click Hint Overlay */}

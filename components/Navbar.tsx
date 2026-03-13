@@ -33,7 +33,6 @@ export const Navbar: React.FC = () => {
     const element = document.getElementById(targetId);
     
     if (element) {
-      // Calculate offset for fixed navbar (approx 100px to give breathing room)
       const yOffset = -100; 
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
       
@@ -60,7 +59,7 @@ export const Navbar: React.FC = () => {
           href="#hero" 
           onClick={(e) => handleLinkClick(e, '#hero')}
           className="text-xl font-mono font-bold tracking-tighter text-white z-50 hover:text-accent transition-colors flex items-center gap-2"
-          aria-label="Jessy's Portfolio Home"
+          aria-label="Portfolio Home"
         >
           <span className="text-accent" aria-hidden="true">&gt;_</span> 
           <span aria-hidden="true">portfolio</span>
