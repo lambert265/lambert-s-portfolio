@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { SectionHeading } from './ui/SectionHeading';
 import { Project } from '../types';
 import { Github, ExternalLink, Terminal, Eye } from 'lucide-react';
 import { Reveal } from './ui/Reveal';
@@ -54,7 +53,11 @@ export const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="py-24 px-6 max-w-7xl mx-auto">
-      <SectionHeading number="04" title="Featured Projects" />
+      <div className="mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          Featured <span className="text-accent">Projects</span>
+        </h2>
+      </div>
       
       {/* Projects List */}
       <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -68,10 +71,20 @@ export const Projects: React.FC = () => {
               transition={{ duration: 0.3 }}
               key={project.id} 
               className="flex flex-col gap-4 h-full group"
+              style={{
+                transformStyle: 'preserve-3d',
+                perspective: '1000px'
+              }}
+              whileHover={{
+                rotateX: 5,
+                rotateY: 5,
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
             >
               {/* Image Side */}
               <div 
-                className="w-full relative overflow-hidden rounded border border-border focus:outline-none focus:ring-2 focus:ring-accent aspect-video"
+                className="w-full relative overflow-hidden rounded-xl border border-white/10 focus:outline-none focus:ring-2 focus:ring-accent aspect-video bg-white/5 backdrop-blur-md shadow-lg"
                 onClick={() => setSelectedProject(project)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
@@ -82,6 +95,7 @@ export const Projects: React.FC = () => {
                 role="button"
                 tabIndex={0}
                 aria-label={`View details for ${project.title}`}
+                style={{ transform: 'translateZ(30px)' }}
               >
                  {/* Overlay */}
                  <div className="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-all duration-500 z-10"></div>
@@ -118,7 +132,7 @@ export const Projects: React.FC = () => {
               </div>
 
               {/* Content Side */}
-              <div className="w-full flex flex-col flex-grow">
+              <div className="w-full flex flex-col flex-grow" style={{ transform: 'translateZ(20px)' }}>
                 <div className="flex justify-between items-start mb-2">
                     <Reveal key={`${project.id}-title`}>
                        <h3 className="text-xl font-bold text-white">

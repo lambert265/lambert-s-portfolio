@@ -1,5 +1,4 @@
 import React from 'react';
-import { SectionHeading } from './ui/SectionHeading';
 import { Reveal } from './ui/Reveal';
 import { Calendar, Clock, ArrowRight, Hash } from 'lucide-react';
 import { BlogPost } from '../types';
@@ -8,58 +7,65 @@ import { Link } from 'react-router-dom';
 const blogPosts: BlogPost[] = [
   {
     id: '1',
-    title: 'Will AI Replace Programmers?',
-    excerpt: 'Developers can now use tools like GitHub Copilot, ChatGPT, and Amazon CodeWhisperer to write functional software at an incredibly fast pace.',
-    date: '2025-06-30',
-    readTime: '3 min read',
+    title: 'The Moment I Realized Coding Is Just Problem Solving',
+    excerpt: 'It hit me during a late-night debugging session. I wasn\'t writing code—I was solving puzzles. Here\'s how that mindset shift changed everything.',
+    date: '2025-01-15',
+    readTime: '5 min read',
     image: '/images/blog1.webp',
-    link: '/blog/will-ai-replace-programmers',
-    tags: ['Ai']
+    link: '/blog/coding-is-problem-solving',
+    tags: ['Learning', 'Mindset']
   },
   {
     id: '2',
-    title: '7 VSCode Hacks Every Developer Should Know',
-    excerpt: 'While many developers use VS Code for the basics, there are hidden gems and workflow tricks that can help you streamline your workflow ',
-    date: '2025-05-05',
-    readTime: '8 min read',
+    title: 'What Building Projects Taught Me That Tutorials Didn\'t',
+    excerpt: 'Tutorials teach syntax. Projects teach you how to think. Here\'s what I learned when I stopped following guides and started building.',
+    date: '2025-01-10',
+    readTime: '6 min read',
     image: '/images/blog2.webp',
-    link: '/blog/vscode-hacks',
-    tags: ['VS Code', 'Productivity']
+    link: '/blog/projects-vs-tutorials',
+    tags: ['Learning', 'Projects']
   },
   {
     id: '3',
-    title: 'ChatGPT Isn\'t Just Smart — It\'s a Cheat Code ',
-    excerpt: 'Let\'s be real — most people are using ChatGPT like a fancier Google search bar. Ask a question, get an answer, copy-paste, and move on.',
-    date: '2025-05-19',
-    readTime: '6 min read',
+    title: 'Why Most Developer Portfolios Are Boring',
+    excerpt: 'Your portfolio shouldn\'t look like everyone else\'s. Here\'s how to make yours stand out without being gimmicky.',
+    date: '2025-01-05',
+    readTime: '7 min read',
     image: '/images/blog3.webp',
-    link: '/blog/chatgpt-cheat-code',
-    tags: ['ChatGPT', 'AI']
-  },
-  {
-    id: '4',
-    title: 'Web3 for Developers: Beyond the Hype',
-    excerpt: 'Web3 isn\'t just about crypto and NFTs. It\'s a fundamental shift in how we build applications—decentralized, user-owned, and trustless.',
-    date: '2025-07-15',
-    readTime: '10 min read',
-    image: '/images/blog4.webp',
-    link: '/blog/web3-for-developers',
-    tags: ['Web3', 'Blockchain']
+    link: '/blog/boring-portfolios',
+    tags: ['Design', 'Career']
   }
 ];
 
 export const Blog: React.FC = () => {
   return (
     <section id="blog" className="py-24 px-6 max-w-7xl mx-auto">
-      <SectionHeading number="06" title="Latest Articles" />
+      <div className="mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          Latest <span className="text-accent">Articles</span>
+        </h2>
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        {blogPosts.slice(0, 3).map((post, index) => (
+        {blogPosts.map((post, index) => (
           <Reveal key={post.id} delay={index * 0.1} width="100%">
             <Link
               to={post.link}
-              className="group block bg-surface border border-border rounded overflow-hidden hover:border-accent/50 transition-all duration-300 flex flex-col h-full relative"
+              className="group block bg-white/5 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden hover:border-accent/50 hover:bg-white/10 transition-all duration-300 flex flex-col h-full relative shadow-lg"
+              style={{
+                transformStyle: 'preserve-3d',
+                perspective: '1000px'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'perspective(1000px) rotateX(5deg) rotateY(5deg) scale3d(1.02, 1.02, 1.02)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+              }}
             >
+              {/* 3D Depth Layers */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/15 via-transparent to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ transform: 'translateZ(-20px)' }} />
+              
               {/* Image Container */}
               <div className="relative h-48 overflow-hidden">
                 <div className="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
@@ -77,7 +83,7 @@ export const Blog: React.FC = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col flex-grow" style={{ transform: 'translateZ(20px)' }}>
                 {/* Tags */}
                 <div className="flex gap-3 mb-4">
                   {post.tags.map(tag => (

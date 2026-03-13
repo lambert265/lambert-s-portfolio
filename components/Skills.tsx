@@ -1,5 +1,4 @@
 import React from 'react';
-import { SectionHeading } from './ui/SectionHeading';
 import { Reveal } from './ui/Reveal';
 import { Monitor, PenTool, Search, Code2 } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -71,17 +70,35 @@ export const Skills: React.FC = () => {
 
   return (
     <section id="skills" className="py-24 px-6 max-w-7xl mx-auto">
-      <SectionHeading number="02" title="Capabilities" />
+      <div className="mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <span className="text-accent">Capabilities</span>
+        </h2>
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {skillCategories.map((category, index) => (
           <Reveal key={category.title} delay={index * 0.1} width="100%">
             <motion.div 
-              className="group relative h-full bg-surface/50 border border-border p-8 rounded hover:border-accent/50 transition-colors duration-300"
+              className="group relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-xl hover:border-accent/50 hover:bg-white/10 transition-all duration-300 shadow-lg"
               initial="rest"
               whileHover="hover"
               animate="rest"
+              style={{
+                transformStyle: 'preserve-3d',
+                perspective: '1000px'
+              }}
+              whileHover={{
+                rotateX: 8,
+                rotateY: 8,
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
             >
+              {/* 3D Depth Layers */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ transform: 'translateZ(-30px)' }} />
+              <div className="absolute inset-0 bg-gradient-to-tl from-blue-500/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ transform: 'translateZ(-20px)' }} />
+              
               {/* Decorative Corners */}
               <div className="absolute top-0 left-0 w-2 h-2 border-l border-t border-accent opacity-50 group-hover:opacity-100 transition-opacity"></div>
               <div className="absolute top-0 right-0 w-2 h-2 border-r border-t border-accent opacity-50 group-hover:opacity-100 transition-opacity"></div>
@@ -91,21 +108,22 @@ export const Skills: React.FC = () => {
               {/* Icon with Animation */}
               <motion.div 
                 variants={iconVariants}
-                className="mb-6 inline-flex items-center justify-center w-12 h-12 rounded bg-surfaceHighlight border border-accent/20 relative z-10"
+                className="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 relative z-10 shadow-xl"
+                style={{ transform: 'translateZ(50px)' }}
               >
                 <category.icon size={24} />
               </motion.div>
 
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors" style={{ transform: 'translateZ(40px)' }}>
                 {category.title}
               </h3>
               
-              <p className="text-secondary text-sm mb-6 leading-relaxed">
+              <p className="text-secondary text-sm mb-6 leading-relaxed" style={{ transform: 'translateZ(30px)' }}>
                 {category.description}
               </p>
 
               {/* Skill List Styled as Terminal Output */}
-              <ul className="space-y-2 font-mono text-xs md:text-sm text-secondary/80">
+              <ul className="space-y-2 font-mono text-xs md:text-sm text-secondary/80" style={{ transform: 'translateZ(20px)' }}>
                 {category.skills.map((skill, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <span className="text-accent mt-0.5">{'>'}</span>

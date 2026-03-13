@@ -1,5 +1,4 @@
 import React from 'react';
-import { SectionHeading } from './ui/SectionHeading';
 import { Reveal } from './ui/Reveal';
 import { Quote, Star } from 'lucide-react';
 import { Testimonial } from '../types';
@@ -7,39 +6,57 @@ import { Testimonial } from '../types';
 const testimonials: Testimonial[] = [
   {
     id: 't1',
-    name: 'Sarah Chen',
-    role: 'Product Manager',
-    company: 'TechFlow Systems',
-    content: "Lambert's ability to translate complex requirements into intuitive user interfaces is unmatched. The dashboard redesign resulted in a 40% increase in user engagement within the first month.",
-    image: 'https://picsum.photos/100/100?random=10'
+    name: 'Chibuey Sydney',
+    role: 'Full Stack Developer',
+    company: 'Fellow Developer',
+    content: "Working alongside Lambert has been inspiring. His approach to problem-solving is methodical yet creative. He doesn't just write code he thinks through the entire user experience. His attention to detail and willingness to help others makes him a valuable team player.",
+    image: ''
   },
   {
     id: 't2',
-    name: 'Marcus Rodriguez',
-    role: 'CTO',
-    company: 'NovaStart',
-    content: "One of the most technically proficient developers I've worked with. Not only is the code clean and scalable, but Lambert also brings a designer's eye to every feature implementation.",
-    image: 'https://picsum.photos/100/100?random=11'
+    name: 'Igwe Hellen Joseph',
+    role: 'Project Manager',
+    company: 'Bahdel Construction',
+    content: "Lambert delivered exactly what we needed for our company website. He took time to understand our business, asked the right questions, and built a platform that truly represents our brand. The site is professional, fast, and our clients love it. Highly recommend working with him.",
+    image: ''
   },
   {
     id: 't3',
-    name: 'Emily Weiss',
-    role: 'Senior Designer',
-    company: 'Creative Studio X',
-    content: "It's rare to find a developer who cares as much about the micro-interactions as the design team does. Lambert bridges the gap between design and engineering perfectly.",
-    image: 'https://picsum.photos/100/100?random=12'
+    name: 'Gwegweson Nyimente Robert',
+    role: 'Computer Science Student',
+    company: 'Rivers State University',
+    content: "Lambert is one of those people who genuinely enjoys building things. He's always experimenting with new ideas and sharing what he learns. His projects are clean, functional, and well thought out. It's been great learning alongside him.",
+    image: ''
   }
 ];
 
 export const Testimonials: React.FC = () => {
   return (
     <section id="testimonials" className="py-24 px-6 max-w-7xl mx-auto">
-      <SectionHeading number="05" title="Transmissions" />
+      <div className="mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <span className="text-accent">Testimonials</span>
+        </h2>
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((t, i) => (
           <Reveal key={t.id} delay={i * 0.15}>
-            <div className="relative p-6 bg-surface border border-border h-full flex flex-col group hover:border-accent/40 transition-colors duration-300">
+            <div className="relative p-6 bg-white/5 backdrop-blur-md border border-white/10 h-full flex flex-col group hover:border-accent/40 hover:bg-white/10 transition-all duration-300 rounded-xl shadow-lg"
+              style={{
+                transformStyle: 'preserve-3d',
+                perspective: '1000px'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'perspective(1000px) rotateX(5deg) rotateY(5deg) scale3d(1.02, 1.02, 1.02)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+              }}
+            >
+               {/* 3D Depth Layer */}
+               <div className="absolute inset-0 bg-gradient-to-br from-accent/15 via-transparent to-cyan-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ transform: 'translateZ(-20px)' }} />
+               
                {/* Cyber Decoration Header */}
                <div className="flex justify-between items-center mb-6 border-b border-border pb-3">
                   <div className="flex gap-1">
@@ -61,10 +78,9 @@ export const Testimonials: React.FC = () => {
 
                <div className="mt-8 flex items-center gap-4">
                   <div className="relative">
-                     <div className="w-10 h-10 rounded-sm overflow-hidden border border-accent/30 grayscale group-hover:grayscale-0 transition-all duration-300">
-                        <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                     <div className="w-10 h-10 rounded-sm overflow-hidden border border-accent/30 bg-accent/10 flex items-center justify-center">
+                        <span className="text-accent font-bold text-lg">{t.name.charAt(0)}</span>
                      </div>
-                     {/* Online Indicator */}
                      <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-accent rounded-full animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.8)]"></div>
                   </div>
                   <div>

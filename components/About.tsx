@@ -1,5 +1,4 @@
 import React from 'react';
-import { SectionHeading } from './ui/SectionHeading';
 import { Reveal } from './ui/Reveal';
 
 export const About: React.FC = () => {
@@ -9,7 +8,11 @@ export const About: React.FC = () => {
       className="py-24 px-6 max-w-7xl mx-auto"
       aria-label="About Me"
     >
-      <SectionHeading number="01" title="About Me" />
+      <div className="mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          About <span className="text-accent">Me</span>
+        </h2>
+      </div>
       
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <div className="space-y-6 text-secondary text-lg leading-relaxed">

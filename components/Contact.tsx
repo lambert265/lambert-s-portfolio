@@ -109,10 +109,7 @@ export const Contact: React.FC = () => {
       <div className="grid lg:grid-cols-2 gap-16 items-start">
         {/* Left Side - Info */}
         <div>
-          <p className="font-mono text-accent mb-4">06. What's Next?</p>
-          <Reveal width="100%">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Build Something</h2>
-          </Reveal>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Build Something</h2>
           
           <Reveal width="100%">
             <p className="text-secondary text-lg leading-relaxed mb-8">

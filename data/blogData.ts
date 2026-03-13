@@ -1,4 +1,34 @@
 export const blogArticles = {
+  'why-websites-look-the-same': {
+    id: '1',
+    title: 'Why Most Websites Look the Same',
+    excerpt: 'Bootstrap, templates, and playing it safe. Here\'s why the web feels boring and how to break the pattern.',
+    date: '2024-11-10',
+    readTime: '6 min read',
+    category: 'Design',
+    image: '/images/blog1.webp',
+    link: '/blog/why-websites-look-the-same',
+    tags: ['Design', 'Web Development'],
+    content: {
+      introduction: 'If you spend enough time browsing the internet, you start noticing a pattern. Many websites feel strangely familiar. A large headline at the top, a call to action button, a section with cards, maybe some testimonials, then a footer. After a while it begins to feel like the entire internet is built from the same blueprint.',
+      sections: [
+        {
+          heading: 'The Reason Behind Familiarity',
+          content: 'There is actually a good reason for this. Web design has evolved around patterns that users already understand. When someone lands on a website they expect certain things. They expect the logo to be in the top corner. They expect navigation at the top. They expect a clear button that tells them what to do next. Designers follow these patterns because they reduce confusion.\n\nFrameworks and templates also play a big role. Modern tools make it easy to build websites quickly using pre built components. While this speeds up development, it also means many websites share the same visual structure.'
+        },
+        {
+          heading: 'The Influence Factor',
+          content: 'Another reason is influence. When a large company launches a successful design, other companies start copying it. Over time those designs become industry standards. This is why so many landing pages look similar.\n\nThe problem is not the pattern itself. Familiarity can actually improve usability. The real issue is when developers stop thinking creatively. A website should reflect the personality of the brand behind it. It should communicate something unique.'
+        },
+        {
+          heading: 'Breaking the Pattern',
+          content: 'Great websites still follow usability principles but they add character. This could come from typography, color, storytelling, motion, or layout choices that feel intentional.'
+        }
+      ],
+      conclusion: 'In the end the goal is not just to build a website that works. The goal is to build a website that feels memorable.'
+    }
+  }
+};
   'will-ai-replace-programmers': {
     id: '1',
     title: 'Will AI Replace Programmers?',
