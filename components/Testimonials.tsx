@@ -42,7 +42,7 @@ export const Testimonials: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {testimonials.map((t, i) => (
           <Reveal key={t.id} delay={i * 0.15}>
-            <div className="relative p-6 bg-white/5 backdrop-blur-md border border-white/10 h-full flex flex-col group hover:border-accent/40 hover:bg-white/10 transition-all duration-300 rounded-xl shadow-lg"
+            <div className="relative p-6 bg-white/5 lg:backdrop-blur-md border border-white/10 h-full flex flex-col group hover:border-accent/40 hover:bg-white/10 transition-all duration-300 rounded-xl shadow-lg"
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: '1000px'

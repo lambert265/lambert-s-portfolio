@@ -1,60 +1,105 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Home, User, Briefcase, Mail, FileText } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export const MobileNav: React.FC = () => {
+  const [activeSection, setActiveSection] = useState('hero');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['hero', 'about', 'projects', 'blog', 'contact'];
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 200 && rect.bottom >= 200) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+    
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToSection = (id: string) => {
+    setActiveSection(id);
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      const yOffset = -100;
+      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   };
 
+  const navItems = [
+    { id: 'hero', icon: Home, label: 'Home' },
+    { id: 'about', icon: User, label: 'About' },
+    { id: 'projects', icon: Briefcase, label: 'Projects' },
+    { id: 'blog', icon: FileText, label: 'Blog' },
+    { id: 'contact', icon: Mail, label: 'Contact' },
+  ];
+
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-md border-t border-border z-50 lg:hidden">
-      <div className="flex justify-around items-center py-3 px-2">
-        <button
-          onClick={() => scrollToSection('hero')}
-          className="flex flex-col items-center gap-1 text-secondary hover:text-accent transition-colors p-2"
-          aria-label="Home"
-        >
-          <Home size={20} />
-          <span className="text-[10px] font-mono">Home</span>
-        </button>
-        
-        <button
-          onClick={() => scrollToSection('about')}
-          className="flex flex-col items-center gap-1 text-secondary hover:text-accent transition-colors p-2"
-          aria-label="About"
-        >
-          <User size={20} />
-          <span className="text-[10px] font-mono">About</span>
-        </button>
-        
-        <button
-          onClick={() => scrollToSection('projects')}
-          className="flex flex-col items-center gap-1 text-secondary hover:text-accent transition-colors p-2"
-          aria-label="Projects"
-        >
-          <Briefcase size={20} />
-          <span className="text-[10px] font-mono">Projects</span>
-        </button>
-        
-        <button
-          onClick={() => scrollToSection('blog')}
-          className="flex flex-col items-center gap-1 text-secondary hover:text-accent transition-colors p-2"
-          aria-label="Blog"
-        >
-          <FileText size={20} />
-          <span className="text-[10px] font-mono">Blog</span>
-        </button>
-        
-        <button
-          onClick={() => scrollToSection('contact')}
-          className="flex flex-col items-center gap-1 text-secondary hover:text-accent transition-colors p-2"
-          aria-label="Contact"
-        >
-          <Mail size={20} />
-          <span className="text-[10px] font-mono">Contact</span>
-        </button>
+    <motion.nav
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, delay: 1 }}
+      className="fixed bottom-4 left-0 right-0 z-50 lg:hidden flex justify-center px-2"
+    >
+      <div className="bg-background/95 border-2 border-accent/40 rounded-full px-3 py-2.5 shadow-[0_10px_40px_rgba(0,0,0,0.8),0_0_20px_rgba(0,243,255,0.2)] backdrop-blur-lg max-w-[90vw]">
+        <div className="flex items-center justify-center gap-3">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = activeSection === item.id;
+            
+            return (
+              <motion.button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="relative flex flex-col items-center justify-center min-w-[48px] touch-manipulation"
+                whileTap={{ scale: 0.9 }}
+                aria-label={item.label}
+              >
+                <motion.div
+                  animate={{
+                    scale: isActive ? 1.1 : 1,
+                  }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                  className="flex flex-col items-center gap-1"
+                >
+                  <Icon 
+                    size={18} 
+                    strokeWidth={isActive ? 2.5 : 2}
+                    className={`transition-colors duration-300 ${
+                      isActive ? 'text-accent' : 'text-secondary'
+                    }`}
+                  />
+                  <span 
+                    className={`text-[8px] font-mono transition-colors duration-300 whitespace-nowrap ${
+                      isActive ? 'text-accent font-bold' : 'text-secondary/80'
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                </motion.div>
+                
+                {isActive && (
+                  <motion.div
+                    layoutId="mobileActiveIndicator"
+                    className="absolute -bottom-1 w-1 h-1 bg-accent rounded-full shadow-[0_0_8px_rgba(0,243,255,0.9)]"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </motion.button>
+            );
+          })}
+        </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };

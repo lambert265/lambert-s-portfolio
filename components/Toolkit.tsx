@@ -55,7 +55,7 @@ export const Toolkit: React.FC = () => {
           <motion.div 
             key={tool.name}
             variants={item}
-            className="group relative p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl hover:border-accent/50 hover:bg-white/10 transition-all duration-300 overflow-hidden shadow-lg"
+            className="group relative p-6 bg-white/5 lg:backdrop-blur-md border border-white/10 rounded-xl hover:border-accent/50 hover:bg-white/10 transition-all duration-300 overflow-hidden shadow-lg"
             style={{
               transformStyle: 'preserve-3d',
               perspective: '1000px'

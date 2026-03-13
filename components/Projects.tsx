@@ -84,7 +84,7 @@ export const Projects: React.FC = () => {
             >
               {/* Image Side */}
               <div 
-                className="w-full relative overflow-hidden rounded-xl border border-white/10 focus:outline-none focus:ring-2 focus:ring-accent aspect-video bg-white/5 backdrop-blur-md shadow-lg"
+                className="w-full relative overflow-hidden rounded-xl border border-white/10 focus:outline-none focus:ring-2 focus:ring-accent aspect-video bg-white/5 lg:backdrop-blur-md shadow-lg"
                 onClick={() => setSelectedProject(project)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {

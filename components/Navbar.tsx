@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { NavItem } from '../types';
-import { Menu, X } from 'lucide-react';
 
 const navItems: NavItem[] = [
   { number: '01', label: 'About', href: '#about' },
@@ -15,7 +14,6 @@ const navItems: NavItem[] = [
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +25,6 @@ export const Navbar: React.FC = () => {
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    setMobileOpen(false);
     
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
@@ -50,8 +47,8 @@ export const Navbar: React.FC = () => {
       transition={{ duration: 0.5, delay: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-background/80 border-b border-border py-4 shadow-lg shadow-black/50 backdrop-blur-md' 
-          : 'bg-transparent py-6 backdrop-blur-sm'
+          ? 'bg-background/80 border-b border-border py-4 shadow-lg shadow-black/50 lg:backdrop-blur-md' 
+          : 'bg-transparent py-6 lg:backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -85,43 +82,9 @@ export const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="lg:hidden text-white z-50 relative hover:text-accent transition-colors p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Close Menu" : "Open Menu"}
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-menu"
-        >
-          {mobileOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
-        </button>
+        {/* Mobile Spacer */}
+        <div className="lg:hidden w-10 h-10"></div>
       </div>
-
-      {/* Mobile Nav */}
-      <motion.div
-        id="mobile-menu"
-        initial={false}
-        animate={mobileOpen ? { height: '100vh', opacity: 1 } : { height: 0, opacity: 0 }}
-        className="fixed inset-0 bg-background/95 backdrop-blur-xl z-40 lg:hidden flex flex-col justify-center items-center overflow-hidden"
-        role="dialog"
-        aria-modal="true"
-        aria-hidden={!mobileOpen}
-      >
-          <div className="flex flex-col gap-8 text-center w-full max-w-sm px-6">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => handleLinkClick(e, item.href)}
-                className="flex items-center justify-between text-2xl font-mono font-bold text-secondary hover:text-white transition-colors border-b border-white/10 pb-2 group"
-                tabIndex={mobileOpen ? 0 : -1}
-              >
-                 <span className="group-hover:text-accent transition-colors">{item.label}</span>
-                 <span className="text-accent text-xs tracking-widest opacity-50 group-hover:opacity-100" aria-hidden="true">{item.number}</span>
-              </a>
-            ))}
-          </div>
-      </motion.div>
     </motion.nav>
   );
 };

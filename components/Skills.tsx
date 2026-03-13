@@ -80,7 +80,7 @@ export const Skills: React.FC = () => {
         {skillCategories.map((category, index) => (
           <Reveal key={category.title} delay={index * 0.1} width="100%">
             <motion.div 
-              className="group relative h-full bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-xl hover:border-accent/50 hover:bg-white/10 transition-all duration-300 shadow-lg"
+              className="group relative h-full bg-white/5 lg:backdrop-blur-md border border-white/10 p-8 rounded-xl hover:border-accent/50 hover:bg-white/10 transition-all duration-300 shadow-lg"
               initial="rest"
               whileHover="hover"
               animate="rest"

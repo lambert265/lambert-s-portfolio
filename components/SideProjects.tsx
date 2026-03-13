@@ -52,7 +52,7 @@ export const SideProjects: React.FC = () => {
           const Icon = project.icon;
           return (
             <Reveal key={index} delay={index * 0.1} width="100%">
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:border-accent/50 hover:bg-white/10 transition-all duration-300 group shadow-lg">
+              <div className="bg-white/5 lg:backdrop-blur-md border border-white/10 rounded-xl p-6 hover:border-accent/50 hover:bg-white/10 transition-all duration-300 group shadow-lg">
                 <div className="flex flex-col md:flex-row md:items-start gap-6">
                   {/* Icon */}
                   <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors flex-shrink-0 border border-white/10">

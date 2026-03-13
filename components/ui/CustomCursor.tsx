@@ -6,11 +6,15 @@ export const CustomCursor: React.FC = () => {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    const updateMousePosition = (e: MouseEvent | TouchEvent) => {
+      if ('touches' in e) {
+        setMousePosition({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+      } else {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      }
     };
 
-    const handleMouseOver = (e: MouseEvent) => {
+    const handleMouseOver = (e: MouseEvent | TouchEvent) => {
       const target = e.target as HTMLElement;
       if (
         target.tagName === 'A' ||
@@ -26,10 +30,14 @@ export const CustomCursor: React.FC = () => {
 
     window.addEventListener('mousemove', updateMousePosition);
     window.addEventListener('mouseover', handleMouseOver);
+    window.addEventListener('touchmove', updateMousePosition);
+    window.addEventListener('touchstart', handleMouseOver);
 
     return () => {
       window.removeEventListener('mousemove', updateMousePosition);
       window.removeEventListener('mouseover', handleMouseOver);
+      window.removeEventListener('touchmove', updateMousePosition);
+      window.removeEventListener('touchstart', handleMouseOver);
     };
   }, []);
 
@@ -37,7 +45,7 @@ export const CustomCursor: React.FC = () => {
     <>
       {/* Main cursor dot */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 bg-accent rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed top-0 left-0 w-3 h-3 bg-accent rounded-full pointer-events-none z-[9999] mix-blend-difference block"
         animate={{
           x: mousePosition.x - 6,
           y: mousePosition.y - 6,
@@ -53,7 +61,7 @@ export const CustomCursor: React.FC = () => {
 
       {/* Outer ring */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border-2 border-accent/50 rounded-full pointer-events-none z-[9998] mix-blend-difference"
+        className="fixed top-0 left-0 w-8 h-8 border-2 border-accent/50 rounded-full pointer-events-none z-[9998] mix-blend-difference block"
         animate={{
           x: mousePosition.x - 16,
           y: mousePosition.y - 16,
