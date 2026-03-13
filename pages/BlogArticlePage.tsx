@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
-import { CustomCursor } from '../components/ui/CustomCursor';
+import { MobileNav } from '../components/MobileNav';
 
 const articlesData: Record<string, any> = {
   'coding-is-problem-solving': {
@@ -219,9 +219,9 @@ export const BlogArticlePage: React.FC = () => {
 
   if (!article) {
     return (
-      <div className="min-h-screen bg-background text-primary flex items-center justify-center" style={{ cursor: 'none' }}>
+      <div className="min-h-screen bg-background text-primary flex items-center justify-center">
         <Navbar />
-        <CustomCursor />
+        <MobileNav />
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Article Not Found</h1>
           <Link to="/blog" className="text-accent hover:text-accent/80">
@@ -233,9 +233,9 @@ export const BlogArticlePage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background text-primary" style={{ cursor: 'none' }}>
+    <div className="min-h-screen bg-background text-primary">
       <Navbar />
-      <CustomCursor />
+      <MobileNav />
       
       <article className="py-24 px-6 max-w-4xl mx-auto">
         <Link to="/blog" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors mb-8">

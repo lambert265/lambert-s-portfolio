@@ -16,7 +16,6 @@ import { FloatingEmail } from './components/FloatingEmail';
 import { MobileNav } from './components/MobileNav';
 import { TechBackground } from './components/ui/TechBackground';
 import { BootSequence } from './components/ui/BootSequence';
-import { CustomCursor } from './components/ui/CustomCursor';
 import { BlogArticlePage } from './pages/BlogArticlePage';
 import { BlogPage } from './pages/BlogPage';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -28,7 +27,6 @@ const HomePage: React.FC = () => {
       <FloatingSocials />
       <FloatingEmail />
       <MobileNav />
-      <CustomCursor />
       
       <main className="w-full relative z-10">
         <Hero />
@@ -58,7 +56,6 @@ const App: React.FC = () => {
       {!loading && (
         <motion.div 
           className="bg-background min-h-screen text-primary overflow-x-hidden selection:bg-accent/30 selection:text-white relative pb-20 lg:pb-0"
-          style={{ cursor: 'none' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -70,7 +67,7 @@ const App: React.FC = () => {
             <Route path="/blog" element={
               <>
                 <Navbar />
-                <CustomCursor />
+                <MobileNav />
                 <BlogPage />
               </>
             } />
