@@ -10,24 +10,30 @@ export const MobileNav: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'projects', 'blog', 'contact'];
-      
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 200 && rect.bottom >= 200) {
-            setActiveSection(section);
-            break;
+      // Only detect scroll position if on home page
+      if (location.pathname === '/') {
+        const sections = ['hero', 'about', 'projects', 'blog', 'contact'];
+        
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= 200 && rect.bottom >= 200) {
+              setActiveSection(section);
+              break;
+            }
           }
         }
+      } else if (location.pathname.startsWith('/blog')) {
+        // If on blog page, set blog as active
+        setActiveSection('blog');
       }
     };
     
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const scrollToSection = (id: string) => {
     setActiveSection(id);
