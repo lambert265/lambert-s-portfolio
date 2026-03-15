@@ -16,6 +16,7 @@ import { FloatingEmail } from './components/FloatingEmail';
 import { MobileNav } from './components/MobileNav';
 import { TechBackground } from './components/ui/TechBackground';
 import { BootSequence } from './components/ui/BootSequence';
+import { CustomCursor } from './components/ui/CustomCursor';
 import { BlogArticlePage } from './pages/BlogArticlePage';
 import { BlogPage } from './pages/BlogPage';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -60,6 +61,7 @@ const App: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
+          <CustomCursor />
           <TechBackground />
           
           <Routes>

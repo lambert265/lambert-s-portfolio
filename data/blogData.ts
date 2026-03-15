@@ -27,8 +27,7 @@ export const blogArticles = {
       ],
       conclusion: 'In the end the goal is not just to build a website that works. The goal is to build a website that feels memorable.'
     }
-  }
-};
+  },
   'will-ai-replace-programmers': {
     id: '1',
     title: 'Will AI Replace Programmers?',

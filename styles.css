@@ -15,6 +15,12 @@
   html {
     scroll-behavior: smooth;
   }
+
+  @media (pointer: fine) and (min-width: 1024px) {
+    *, *::before, *::after {
+      cursor: none !important;
+    }
+  }
 }
 
 @layer utilities {

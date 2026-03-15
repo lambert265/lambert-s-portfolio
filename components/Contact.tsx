@@ -157,6 +157,11 @@ export const Contact: React.FC = () => {
                 aria-label="LinkedIn Profile">
                 <Linkedin size={20} className="text-secondary hover:text-accent" />
               </a>
+              <a href="https://twitter.com/yk_lambert" target="_blank" rel="noopener noreferrer"
+                className="w-12 h-12 rounded-lg bg-surfaceHighlight border border-border flex items-center justify-center hover:border-accent hover:bg-accent/10 transition-all hover:-translate-y-1"
+                aria-label="X (Twitter) Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-secondary hover:text-accent"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+              </a>
               <a href="https://www.instagram.com/_yk_lambert" target="_blank" rel="noopener noreferrer" 
                 className="w-12 h-12 rounded-lg bg-surfaceHighlight border border-border flex items-center justify-center hover:border-accent hover:bg-accent/10 transition-all hover:-translate-y-1" 
                 aria-label="Instagram Profile">

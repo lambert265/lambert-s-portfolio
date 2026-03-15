@@ -24,7 +24,7 @@ export const About: React.FC = () => {
           
           <Reveal>
             <p>
-              As a computer science student, web developer, and technical writer, I focus on creating modern, high-performance interfaces that balance clean architecture with intuitive user experience. I enjoy turning complex ideas into structured systems and elegant, user-friendly products whether that's building a decentralized Web3 application or translating complex technical concepts into clear, readable documentation.
+              As a computer science student, web developer and a technical writer, I focus on creating modern high performance interfaces that balance clean architecture with intuitive user experience. I enjoy turning complex ideas into structured systems and elegant, user friendly products whether that's building a decentralized Web3 application or translating complex technical concepts into clear, readable documentation.
             </p>
           </Reveal>
           
@@ -48,7 +48,7 @@ export const About: React.FC = () => {
           
           <Reveal>
             <p>
-              I am passionate about cutting-edge pixel-perfect, beautiful interfaces and intuitively implemented UX.
+              I am passionate about cutting edge pixel perfect, beautiful interfaces and intuitively implemented UX.
             </p>
           </Reveal>
         </div>
